@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-color: hsl(180, 52%, 96%);
+  margin: 0;
+}
+header {
+  height: 10%;
+  background-color: hsl(180, 29%, 50%);
+  background-image: url("/assets/images/bg-header-desktop.svg");
+  text-align: center;
+}
+footer {
+  height: 10%;
+  text-align: center;
+}
+main {
+}
+
+.listingContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 10% 10% 10%;
+}
+.jobList {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 5px 5px 5px hsl(180, 20%, 81%);
+  padding: 10px;
+  margin: 10px;
+  height: 125px;
+}
+.companyLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  padding: 5px;
+}
+.jobDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+}
+.jobTags {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.jobTag {
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  font-weight: bold;
+}
+
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Desaturated Dark Cyan: hsl(180, 29%, 50%)
+
+### Neutral
+
+- Light Grayish Cyan (Background): hsl(180, 52%, 96%)
+- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%)
+- Dark Grayish Cyan: hsl(180, 8%, 52%)
+- Very Dark Grayish Cyan: hsl(180, 14%, 20%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Headings
+
+- Family: [Spartan](https://fonts.google.com/specimen/Spartan)
+- Weights: 500, 700
+
+*/
