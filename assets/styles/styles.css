@@ -1,29 +1,38 @@
 * {
   box-sizing: border-box;
 }
+
 body {
-  height: 100%;
   background-color: hsl(180, 52%, 96%);
   margin: 0;
 }
+
 header {
   height: 10%;
   background-color: hsl(180, 29%, 50%);
   background-image: url("../images/bg-header-desktop.svg");
   text-align: center;
 }
+
 footer {
-  height: 10%;
-  text-align: center;
+  height: 5%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
+
 main {
+  font-family: "Spartan", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .listingContainer {
   display: flex;
   flex-direction: column;
-  margin: 5% 10% 10% 10%;
+  margin: 0% 10% 5% 10%;
 }
+
 .jobList {
   display: flex;
   flex-direction: row;
@@ -33,6 +42,7 @@ main {
   margin: 10px;
   height: 125px;
 }
+
 .companyLogo {
   display: flex;
   justify-content: center;
@@ -40,6 +50,7 @@ main {
   width: 100px;
   padding: 5px;
 }
+
 .jobDescription {
   display: flex;
   flex-direction: column;
@@ -48,6 +59,7 @@ main {
   min-width: 50%;
   padding-left: 2%;
 }
+
 .jobTags {
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +68,9 @@ main {
   align-items: center;
   flex-direction: row;
   flex-grow: 1;
+  max-width: 50%;
 }
+
 .jobTag {
   padding: 5px;
   margin-left: 5px;
@@ -64,63 +78,141 @@ main {
   background-color: hsl(180, 52%, 96%);
   color: hsl(180, 29%, 50%);
   font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
-
+.jobTag:hover {
+  color: white;
+  background-color: hsl(180, 29%, 50%);
+}
 .companyDescription {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
 }
+
 .companyName {
   font-weight: bolder;
   color: hsl(180, 29%, 50%);
+  padding: 7px 0px 4px 0px;
+  font-weight: 700;
 }
+
 .jobPosition {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
   font-weight: bold;
   font-size: large;
 }
+
 .pillShape {
   border-radius: 16px;
-  padding: 3px 6px;
+  padding: 9px 10px 0px 10px;
   margin-left: 10px;
   font-size: small;
   font-weight: bold;
+  font-size: small;
 }
+
 .newPosting {
   background-color: hsl(180, 29%, 50%);
   color: white;
-  width: 40px;
 }
+
 .featuredPosting {
   background-color: black;
   color: white;
-  width: 80px;
 }
+
 .aboutJob {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
   color: hsl(180, 2%, 43%);
 }
+
 .aboutJobDetail {
   margin-right: 5%;
 }
+
 .dotElement {
   margin-right: 5%;
   font-weight: bolder;
 }
+
 .darkBorderLeft {
   border-left: 5px;
   border-left-color: hsl(180, 29%, 50%);
   border-left-style: solid;
+}
+
+.listingFilter {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+  background: white;
+  position: relative;
+  top: -40px;
+  border-radius: 10px;
+  margin: 0% 10% 0% 10%;
+  height: 80px;
+  padding: 0px 20px;
+}
+.filterContainer {
+  display: flex;
+  width: 100%;
+}
+.filterTag {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+.filterContent {
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding-right: 10px;
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  font-weight: bold;
+}
+.filterCross {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+}
+.clearBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+.filterBox {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.clearFilter {
+  color: hsl(180, 29%, 50%);
+  font-weight: bolder;
+  text-decoration: underline;
+  cursor: pointer;
 }
 /*
 # Front-end Style Guide
@@ -156,4 +248,4 @@ The designs were created to the following widths:
 - Family: [Spartan](https://fonts.google.com/specimen/Spartan)
 - Weights: 500, 700
 
-*/
+*/ ;

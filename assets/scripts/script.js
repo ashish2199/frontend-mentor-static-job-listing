@@ -48,7 +48,7 @@ function createCompanyDescription(jobListing) {
   companyDescription.appendChild(companyName);
 
   if (jobListing.new) {
-    let newJobPost = createCustomElement("div", "newPosting pillShape", "New!");
+    let newJobPost = createCustomElement("div", "newPosting pillShape", "NEW!");
     companyDescription.appendChild(newJobPost);
   }
 
@@ -100,6 +100,13 @@ function createJobTagsElement(jobListing) {
 
 function createTag(content) {
   let tag = createCustomElement("div", "jobTag", content);
+  tag.addEventListener("click", (e) => {
+    App.setState(() => {
+      if (!App.state.filterTags.includes(content)) {
+        App.state.filterTags.push(content);
+      }
+    });
+  });
   return tag;
 }
 
@@ -124,12 +131,76 @@ function createCompanyLogo(jobListing) {
   companyLogo.append(img);
   return companyLogo;
 }
-async function init() {
-  const listings = await fetchData();
-  const nodes = listings.map(createListingNode);
-  const listingContainer = document.getElementById("jobListingContainer");
-  nodes.forEach((node) => {
-    listingContainer.appendChild(node);
+
+function createFilterNode(tagContent) {
+  let tag = createCustomElement("div", "filterTag");
+  let filterContent = createCustomElement("div", "filterContent", tagContent);
+  let filterCross = createCustomElement("div", "filterCross", "X");
+  filterCross.addEventListener("click", (e) => {
+    App.setState(() => {
+      let filters = App.state.filterTags;
+      App.state.filterTags = filters.filter((filter) => filter != tagContent);
+    });
   });
+  tag.append(filterContent, filterCross);
+  return tag;
 }
-init();
+
+function createfilterContainer(filters) {
+  let filtertagsContainer = createCustomElement("div", "filterContainer");
+
+  let filtertagsBox = createCustomElement("div", "filterBox");
+  filtertagsBox.append(...filters);
+  let clearFilterBox = createCustomElement("div", "clearBox");
+  let clearFilter = createCustomElement("div", "clearFilter", "Clear");
+  clearFilter.addEventListener("click", (e) => {
+    App.setState(() => {
+      App.state.filterTags = [];
+    });
+  });
+  clearFilterBox.append(clearFilter);
+  filtertagsContainer.append(filtertagsBox, clearFilterBox);
+  return filtertagsContainer;
+}
+const App = {
+  state: {},
+  async init() {
+    const listings = await fetchData();
+    this.setState(() => {
+      this.state.listings = listings;
+      this.state.filterTags = [];
+    });
+  },
+  setState(callback) {
+    callback();
+    this.render();
+  },
+  render() {
+    const listing = this.state.listings;
+    const filteredList = listing.filter((jobListing) => {
+      let tags = [
+        jobListing.role,
+        jobListing.level,
+        ...jobListing.languages,
+        ...jobListing.tools,
+      ];
+      return this.state.filterTags.every((t) => tags.includes(t));
+    });
+
+    const nodes = filteredList.map(createListingNode);
+    const listingContainer = document.getElementById("jobListingContainer");
+    listingContainer.replaceChildren(...nodes);
+
+    const filterTags = this.state.filterTags.map(createFilterNode);
+    let filterContent = createfilterContainer(filterTags);
+    const filterContainer = document.getElementById("jobListingFilter");
+    filterContainer.replaceChildren(filterContent);
+    if (this.state.filterTags.length == 0) {
+      filterContainer.style.visibility = "hidden";
+    } else {
+      filterContainer.style.visibility = "";
+    }
+  },
+};
+
+App.init();
