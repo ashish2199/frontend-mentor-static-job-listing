@@ -9,7 +9,7 @@ body {
 header {
   height: 10%;
   background-color: hsl(180, 29%, 50%);
-  background-image: url("/assets/images/bg-header-desktop.svg");
+  background-image: url("../images/bg-header-desktop.svg");
   text-align: center;
 }
 footer {
@@ -42,9 +42,11 @@ main {
 }
 .jobDescription {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 50%;
+  padding-left: 2%;
 }
 .jobTags {
   display: flex;
@@ -64,6 +66,62 @@ main {
   font-weight: bold;
 }
 
+.companyDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+.companyName {
+  font-weight: bolder;
+  color: hsl(180, 29%, 50%);
+}
+.jobPosition {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+.pillShape {
+  border-radius: 16px;
+  padding: 3px 6px;
+  margin-left: 10px;
+  font-size: small;
+  font-weight: bold;
+}
+.newPosting {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  width: 40px;
+}
+.featuredPosting {
+  background-color: black;
+  color: white;
+  width: 80px;
+}
+.aboutJob {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 5px;
+  color: hsl(180, 2%, 43%);
+}
+.aboutJobDetail {
+  margin-right: 5%;
+}
+.dotElement {
+  margin-right: 5%;
+  font-weight: bolder;
+}
+.darkBorderLeft {
+  border-left: 5px;
+  border-left-color: hsl(180, 29%, 50%);
+  border-left-style: solid;
+}
 /*
 # Front-end Style Guide
 
