@@ -6,7 +6,7 @@
 
 Built with vanilla JS and flexbox.
 
----
+## ![Screenshot](https://i.imgur.com/IhjLjPv.png)
 
 ### To run the project locally
 
