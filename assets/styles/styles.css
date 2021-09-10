@@ -113,7 +113,6 @@ main {
   border-radius: 16px;
   padding: 9px 10px 0px 10px;
   margin-left: 10px;
-  font-size: small;
   font-weight: bold;
   font-size: small;
 }
@@ -213,6 +212,63 @@ main {
   font-weight: bolder;
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media all and (max-width: 400px) {
+  .jobList {
+    flex-direction: column;
+    height: unset;
+    position: relative;
+    margin-top: 40px;
+  }
+  .companyLogo {
+    position: absolute;
+    top: -40px;
+    left: -5px;
+  }
+  .companyLogo > img {
+    width: 70px;
+  }
+  .main {
+    font-size: 12px;
+  }
+  .aboutJob {
+    font-size: x-small;
+  }
+  .pillShape {
+    font-size: xx-small;
+  }
+  .jobPosition {
+    font-size: small;
+  }
+  .jobTags {
+    justify-content: flex-start;
+    max-width: unset;
+    margin-top: 10px;
+  }
+  .jobTag {
+    font-size: small;
+  }
+  .jobDescription {
+    margin-top: 30px;
+  }
+
+  .listingFilter {
+    height: unset;
+    padding: 5px;
+  }
+  .filterBox {
+    flex-wrap: wrap;
+  }
+  .filterContainer {
+    font-size: x-small;
+  }
+  .filterCross {
+    font-size: x-small;
+  }
+  .filterTag {
+    margin-top: 5px;
+  }
 }
 /*
 # Front-end Style Guide
